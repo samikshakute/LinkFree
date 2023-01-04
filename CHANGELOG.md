@@ -1,45 +1,45 @@
-## [0.68.5](https://github.com/EddieHubCommunity/LinkFree/compare/v0.68.4...v0.68.5) (2022-06-27)
+## [1.40.5](https://github.com/EddieHubCommunity/LinkFree/compare/v1.40.4...v1.40.5) (2023-01-04)
 
 
 ### Bug Fixes
 
-* update eddiejaoude ([#1413](https://github.com/EddieHubCommunity/LinkFree/issues/1413)) ([e42c0c8](https://github.com/EddieHubCommunity/LinkFree/commit/e42c0c8a41a9aa3bad18d79c3aa7ed07c83dfe65))
+* github action jq to apt ([0022406](https://github.com/EddieHubCommunity/LinkFree/commit/00224060dd733ad66182efa8c4dc1709a45a2e36))
 
 
 
-## [0.68.4](https://github.com/EddieHubCommunity/LinkFree/compare/v0.68.3...v0.68.4) (2022-06-24)
-
-
-### Bug Fixes
-
-* YuriDevAT ([#1404](https://github.com/EddieHubCommunity/LinkFree/issues/1404)) ([23fb7ed](https://github.com/EddieHubCommunity/LinkFree/commit/23fb7ed4c87e87919d7e9c026d3ac6a128755fcd))
-
-
-
-## [0.68.3](https://github.com/EddieHubCommunity/LinkFree/compare/v0.68.2...v0.68.3) (2022-06-15)
+## [1.40.4](https://github.com/EddieHubCommunity/LinkFree/compare/v1.40.3...v1.40.4) (2023-01-04)
 
 
 ### Bug Fixes
 
-* update typos and add profile ([#1361](https://github.com/EddieHubCommunity/LinkFree/issues/1361)) ([00b485c](https://github.com/EddieHubCommunity/LinkFree/commit/00b485cae50ddae9ea585feaa310a9dd75d713a4))
+* github action for jq ([7bdc59c](https://github.com/EddieHubCommunity/LinkFree/commit/7bdc59c8aaaa4ce8915b0399102eee0b65cb35c7))
 
 
 
-## [0.68.2](https://github.com/EddieHubCommunity/LinkFree/compare/v0.68.1...v0.68.2) (2022-06-10)
-
-
-### Bug Fixes
-
-* kirtijain627([#1369](https://github.com/EddieHubCommunity/LinkFree/issues/1369)) ([38f65c2](https://github.com/EddieHubCommunity/LinkFree/commit/38f65c2b814ff30cf656a8169b3127ccab04dce1))
-
-
-
-## [0.68.1](https://github.com/EddieHubCommunity/LinkFree/compare/v0.68.0...v0.68.1) (2022-06-10)
+## [1.40.3](https://github.com/EddieHubCommunity/LinkFree/compare/v1.40.2...v1.40.3) (2023-01-04)
 
 
 ### Bug Fixes
 
-* lockfile ([#1370](https://github.com/EddieHubCommunity/LinkFree/issues/1370)) ([d0903cb](https://github.com/EddieHubCommunity/LinkFree/commit/d0903cbd2556ec9b0f42209f1f35d77576019bca))
+* github action for jq ([30b79a3](https://github.com/EddieHubCommunity/LinkFree/commit/30b79a3685339e54fc9495254b1aa575f14f6225))
+
+
+
+## [1.40.2](https://github.com/EddieHubCommunity/LinkFree/compare/v1.40.1...v1.40.2) (2023-01-04)
+
+
+### Bug Fixes
+
+* github action use + run ([19d14b7](https://github.com/EddieHubCommunity/LinkFree/commit/19d14b7878d38dfcf967b9f2f869d70d29609d06))
+
+
+
+## [1.40.1](https://github.com/EddieHubCommunity/LinkFree/compare/v1.40.0...v1.40.1) (2023-01-04)
+
+
+### Bug Fixes
+
+* validate testimonial json before merging ([#2660](https://github.com/EddieHubCommunity/LinkFree/issues/2660)) ([f17cc77](https://github.com/EddieHubCommunity/LinkFree/commit/f17cc77abe3ac0b4cdeb19d6decdfd61c052f349))
 
 
 

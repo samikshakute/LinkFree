@@ -1,94 +1,108 @@
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/EddieHubCommunity/LinkFree)
+[![Open in GitPod](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/EddieHubCommunity/LinkFree) ![Uptime](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FEddieHubCommunity%2Fmonitoring%2Fmaster%2Fapi%2Flink-free%2Fuptime.json) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/EddieHubCommunity/LinkFree) ![GitHub repo size](https://img.shields.io/github/repo-size/EddieHubCommunity/LinkFree)
 
-# LinkFree by EddieHub
+# What is LinkFree?
 
-- LinkFree connects audiences to all of your content with just one link. It is an open-source alternative to [Linktree](https://linktr.ee/) implemented in JavaScript.
-- It was initially created on a YouTube [live stream](https://www.youtube.com/watch?v=Jorl_vcp-Ew).
+LinkFree is the Open Source alternative to LinkTree. A platform where people in tech can have a single hub to showcase their content in order to accelerate their career, whilst contributing to an Open Source project and being part of a community which has a say in where the project is going.
 
-![Eddie Jaoude's LinkFree profile GIF](https://user-images.githubusercontent.com/82458069/145549448-b1feb5df-78aa-4286-a709-6985f0dade4c.gif)
+Your profile will have links to your social media and content. You can also add your timeline, testimonials and upcoming events that you are participating in.
 
-<details close>
-  <summary><span style="font-size: 24px; font-weight: 700;"> Note for Hacktoberfest </span></summary>
-  <br>
+Here is an example of a LinkFree [Profile](https://linkfree.eddiehub.io/eddiejaoude)...
 
-> A note for Hacktoberfest participants:
->
-> Pull requests which add or edit your information in a `public/data/${yourname}.json` file will NOT be counted for Hacktoberfest.
->
-> Pull requests which improve the codebase, documentation, or other aspects of the project and are in line with the core values of the event will count. Maintainers will opt-in these PRs by applying the `hacktoberfest-accepted` label.
+![Example profile on LinkFree](https://user-images.githubusercontent.com/624760/207048057-0f8cc74f-cc50-4cb3-b1a9-7e37f1a66d2c.png)
 
-</details>
+## 🛠️ Quickstart
 
-## Example using Gitpod, ephemeral dev environment in the cloud (free)
+You have 4 options to contribute to the repo, please pick your favourite from:
 
-![Gitpod GIF with progress bar](https://user-images.githubusercontent.com/46727048/146048451-ed4ff31a-c178-4713-a9e0-95118be742dc.gif)
+1. GitHub UI
+2. Gitpod
+3. Local development
+4. Local development with Docker Compose
 
-## 👨‍💻 Demo
+Brief documentation below, but full documentation can be found here https://linkfree.eddiehub.io/docs
 
-Check out the website: [LinkFree](https://linkfree.eddiehub.io/)
+### GitHub UI
 
-## 👇 Prerequisites
+This is great if you only want to add your Profile or make changes to it.
 
-Before installation, please make sure you have already installed the following tools:
+*note: give extra attention to json formatting and the GitHub Action after you create the Pull Request*
 
-- [Git](https://git-scm.com/downloads)
-- [NodeJs](https://nodejs.org/en/download/)
+### Gitpod
 
-## 🛠️ Installation Steps
+In the cloud free development environment which will have all the dependencies you need (for example MongoDB).
 
-1. Fork the project
-2. Clone the project
-3. Navigate to the project directory `cd LinkFree`
-4. Install dependencies with `npm install`
-5. Run `npm start`
-6. Optional: Run the tests with `npm run cypress:run`
+You can use Gitpod in the cloud [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/EddieHubCommunity/LinkFree/)
 
-> **Warning**: After adding your profile, you'll not see it on the home page; you can see your profile in the main menu by running the command `npm run generate`.
+### Local development
 
-Alternatively, skip all the steps by using [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/EddieHubCommunity/LinkFree/)
+This environment is fully on computer, and requires each dependency (for example MongoDB) to be installed and setup, but gives you the most flexiblity for customisation.
 
-## 👨‍💻 Contributing
+#### Prerequisites
 
-- Contributions make the open source community such an amazing place to learn, inspire, and create.
-- Any contributions you make are **greatly appreciated**.
-- Check out our [contribution guidelines](/CONTRIBUTING.md) for more information.
+Before contributing or adding a new feature, please make sure you have already installed the following tools:
 
-## 🎭 To Add Your Profile
+- [NodeJs](https://nodejs.org/en/download/) (Works with Node LTS version v16.17.0)
+- [MongoDB](https://www.mongodb.com/home)
+- Optional [NVM](https://github.com/nvm-sh/nvm): Switch Node version by using `nvm use` (on Windows, use `nvm use v16.17.0`). If this is not installed, run `nvm install v16.17.0`.
 
-Create a file named using your GitHub username `username.json` in the directory `public/data`, this will ensure it is unique.
+#### Commands
 
-**Optional fields: `links`, `milestones` and `type(personal | community)`**\
+You can set this up locally with the following steps:
+
+1. copy the `.env.example` file to `.env` and update any details required
+1. mongodb is required, it is possible to use `docker-compose up` to start the mongodb service
+1. `npm install`
+1. `npm run dev`
+
+### 🙂 How to add YOUR Profile
+
+Step by step quickstart guide can be found in the full docs here https://linkfree.eddiehub.io/docs/quickstart
+
+1. Fork the repository in your profile which lets you do the changes in the project without affecting the main repository
+2. Create a new branch
+3. In the `data` directory, create a `.json` file with the same name as your GitHub username. For example, if your GitHub username is `eddiehub`, create a file named `eddiehub.json`. This will ensure that your username is unique. 
+
+**Optional fields: `milestones`, `type(personal | community)`, `socials`, `testimonials` and `events`**
+
 Looking for inspiration? You can view the following profiles for an example:
 
-- [Eddie Jaoude](https://github.com/EddieHubCommunity/LinkFree/blob/main/public/data/eddiejaoude.json)
-- [Naomi Carrigan](https://github.com/EddieHubCommunity/LinkFree/blob/main/public/data/nhcarrigan.json)
-- [Kaiwalya Koparkar](https://github.com/EddieHubCommunity/LinkFree/blob/main/public/data/kaiwalyakoparkar.json)
+- [Eddie Jaoude](https://github.com/EddieHubCommunity/LinkFree/blob/main/data/eddiejaoude.json)
+- [Krupali Trivedi || Chai](https://github.com/EddieHubCommunity/LinkFree/blob/main/data/krupalitrivedi.json)
+- [Pradumna Saraf](https://github.com/EddieHubCommunity/LinkFree/blob/main/data/Pradumnasaraf.json)
 
 Your brand new file should look something similar to this one:
+
+> **Note**: add/remove `links` objects to customise your Profile, `milestones` are optional
 
 ```json
 {
   "name": "YOUR NAME",
+  "displayStatsPublic": true,
   "type": "personal",
   "bio": "Open Source Enthusiast!",
   "avatar": "https://github.com/YOUR_GITHUB_USERNAME.png",
+  "tags": ["javascript", "typescript"],
+  "socials": [
+    { "icon": "FaTwitter", "url": "https://twitter.com/YOUR_TWITTER_USERNAME" },
+    { "icon": "FaGithub", "url": "https://github.com/YOUR_GITHUB_USERNAME" }
+  ],
   "links": [
     {
       "name": "Follow me on GitHub",
       "url": "https://github.com/YOUR_GITHUB_USERNAME",
-      "icon": "github"
+      "icon": "FaGithub"
     },
     {
       "name": "Follow me on Twitter",
       "url": "https://twitter.com/YOUR_TWITTER_USERNAME",
-      "icon": "twitter"
+      "icon": "FaTwitter"
     }
   ],
   "milestones": [
     {
       "title": "Started Freelancing",
       "date": "December 2021",
-      "icon": "dollar",
+      "icon": "FaDollarSign",
       "color": "grey",
       "description": "Started freelancing",
       "url": "https://www.eddiejaoude.io/"
@@ -101,42 +115,21 @@ Your URL will be `https://linkfree.eddiehub.io/<yourusername>`
 
 For example: <https://linkfree.eddiehub.io/eddiejaoude>
 
-To include your `avatar`, You just have to replace `<yourusername>` with your **github username** in the format of `https://github.com/<yourusername>.png` and it will automatically be fetched from github account.
+To include your `avatar`, you have to replace `<yourusername>` with your **GitHub username** in the format of `https://github.com/<yourusername>.png` and it will automatically be fetched from your GitHub account.
 
 For example: <http://github.com/eddiejaoude.png>
 
-Note: after your PR is merged, the project still needs to be deployed for your profile to be displayed
-
-### A simple gif version of adding your profile
-
-![Linkfree adding profile GIF](https://user-images.githubusercontent.com/51878265/165113896-35d34c1d-c95e-4bb4-b658-df1afb9ab658.gif)
-
-### Available Icons:
-
-Check [Icons.md](/icons.md) for all the supported icons.
-
-### Single user mode
-
-If you wish to self-host this app for a single user, follow the same steps as above, but then in the file `src/config/user.json` add your username.
-
-For example
-
-```json
-{
-  "username": ""
-}
-```
+Note: After your PR gets merged, the project still needs to be deployed for your Profile to be displayed.
 
 ## 🛡️ License
 
 LinkFree is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 💪 Thanks to all Contributors
+## 🧰 Contributing
 
-Thanks a lot for spending your time helping LinkFree grow. Thanks a lot! Keep rocking 🍻
-
-[![Contributors](https://contrib.rocks/image?repo=EddieHubCommunity/LinkFree)](https://github.com/EddieHubCommunity/LinkFree/graphs/contributors)
+- Contributions make the open source community such an amazing place to learn, inspire, and create.
+- Any contributions you make are **truly appreciated**.
 
 ## 🙏 Support
 
-This project needs a ⭐️ from you. Don't forget to leave a star ⭐️
+Don't forget to leave a star ⭐️
