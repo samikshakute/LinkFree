@@ -1,8 +1,6 @@
 {
   "name": "Ankush Tripathi",
-  "type": "personal",
-  "bio": "I am Ankush Tripathi, currently pursuing my engineering degree in computer science from Atharva college of engineering. I am a tech enthusiast. I am always open to collaborate on projects and innovative/disruptive ideas",
-  "avatar": "https://github.com/ankushtripathii.png",
+  "bio": "Hi, I am Ankush Tripathi, currently pursuing my engineering degree in computer science from Atharva College of engineering. I am a tech enthusiast. I am always open to collaborating on projects and innovative/disruptive ideas",
   "links": [
     {
       "name": "Follow me on GitHub",
@@ -11,13 +9,18 @@
     },
     {
       "name": "Follow me on Twitter",
-      "url": "https://twitter.com/imalphaorionis",
+      "url": "https://twitter.com/ankushtripathii",
       "icon": "FaTwitter"
     },
     {
       "name": "Follow me on LinkedIn",
       "url": "https://www.linkedin.com/in/ankush-tripathi-547008234",
       "icon": "FaLinkedin"
+    },
+    {
+      "name": "Follow me on Instagram",
+      "url": "https://www.instagram.com/ankushtripathii/",
+      "icon": "Instagram"
     }
   ]
 }

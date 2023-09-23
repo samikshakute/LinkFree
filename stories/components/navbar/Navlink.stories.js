@@ -1,15 +1,23 @@
-import NavLink from "../../../components/navbar/NavLink";
+import NavLink from "@components/navbar/NavLink";
 
 export default {
   component: NavLink,
 };
 
-export const Basic = <NavLink {...args} />;
-
-Basic.args = {
-  path: "",
-  item: {
-    url: "",
+export const Basic = {
+  args: {
+    path: "https://biodrop.io/docs",
+    item: {
+      url: "https://biodrop.io/docs",
+      name: "Docs",
+    },
+    mode: "",
   },
-  mode: "",
+};
+
+export const Mobile = {
+  args: {
+    ...Basic.args,
+    mode: "mobile",
+  },
 };

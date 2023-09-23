@@ -1,30 +1,34 @@
 import mongoose from "mongoose";
-import * as fs from "fs";
+import logger from "./logger";
+import { serverEnv } from "@config/schemas/serverSchema";
 
-let hasConnection = false;
+let connection;
+
 const connectMongo = async () => {
-  if (!process.env.LINKFREE_MONGO_CONNECTION_STRING) {
+  const { BIODROP_MONGO_CONNECTION_STRING } = serverEnv;
+
+  if (!BIODROP_MONGO_CONNECTION_STRING) {
     throw new Error(
-      "Please define the LINKFREE_MONGO_CONNECTION_STRING environment variable (if local add to .env file)"
+      "Please define the BIODROP_MONGO_CONNECTION_STRING environment variable (if local add to .env file)"
     );
   }
 
-  if (hasConnection) {
-    return;
+  if (connection) {
+    return connection;
   }
-  try {
-    // DigitalOcean Apps has cert as environment variable but Mongo needs a file path
-    // Write Mongo cert file to disk
-    if (process.env.CA_CERT) {
-      fs.writeFileSync("cert.pem", process.env.CA_CERT);
-    }
 
-    await mongoose.connect(process.env.LINKFREE_MONGO_CONNECTION_STRING);
-    hasConnection = true;
-    console.log("DB connected");
-  } catch (err) {
-    hasConnection = false;
-    console.error("DB Not connected", err);
+  try {
+    const options = { autoIndex: true, family: 4, maxPoolSize: 10 };
+    connection = await mongoose.connect(
+      BIODROP_MONGO_CONNECTION_STRING,
+      options
+    );
+    logger.info("DB connection successful:", connection.name);
+
+    return connection;
+  } catch (error) {
+    logger.error("DB connection failed:", error.message);
+    throw error;
   }
 };
 

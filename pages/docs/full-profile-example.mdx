@@ -1,6 +1,7 @@
-import DocsLayout from "../../components/layouts/DocsLayout.js";
+import DocsLayout from "@components/layouts/DocsLayout.js";
+import Link from "@components/Link";
 
-## Full profile
+## Full Profile
 
 More data fields are allowed...
 
@@ -9,10 +10,7 @@ _Note: the data fields `links`, `milestones`, `testimonials`, `tags`, `socials` 
 ```js
 {
   "name": "Eddie Jaoude",
-  "type": "personal",
-  "displayStatsPublic": true,
   "bio": "Open Source DevRel | Founder of **EddieHub** | **GitHub** Star",
-  "avatar": "https://github.com/eddiejaoude.png",
   "tags": [
     "Open Source",
     "Javascript",
@@ -102,7 +100,6 @@ _Note: the data fields `links`, `milestones`, `testimonials`, `tags`, `socials` 
       "title": "Started Freelancing",
       "date": "May 2010",
       "icon": "FaDollarSign",
-      "color": "grey",
       "description": "Started freelancing again",
       "url": "https://www.eddiejaoude.io/"
     },
@@ -111,7 +108,6 @@ _Note: the data fields `links`, `milestones`, `testimonials`, `tags`, `socials` 
       "image": "https://github.com/eddiejaoude.png",
       "date": "June 2019",
       "icon": "FaYoutube",
-      "color": "red",
       "description": "First real video",
       "url": "https://youtube.com/eddiejaoude"
     },
@@ -119,7 +115,6 @@ _Note: the data fields `links`, `milestones`, `testimonials`, `tags`, `socials` 
       "title": "GitHub Star",
       "date": "2020",
       "icon": "FaGithub",
-      "color": "green",
       "description": "Became a **GitHub** Star with 30 other people",
       "url": "https://github.com/eddiejaoude"
     },
@@ -127,7 +122,6 @@ _Note: the data fields `links`, `milestones`, `testimonials`, `tags`, `socials` 
       "title": "GitHub Star of the Year",
       "date": "2020",
       "icon": "FaGithub",
-      "color": "green",
       "description": "Won GitHub Star of the Year out of 55+ million people",
       "url": "https://github.com/eddiejaoude"
     },
@@ -135,7 +129,6 @@ _Note: the data fields `links`, `milestones`, `testimonials`, `tags`, `socials` 
       "title": "GitHub Nova, Community Growth Award",
       "date": "2021",
       "icon": "FaGithub",
-      "color": "green",
       "description": "Won for growing the EddieHub Community to over 30k members.",
       "url": "https://github.com/eddiejaoude"
     },
@@ -143,52 +136,21 @@ _Note: the data fields `links`, `milestones`, `testimonials`, `tags`, `socials` 
       "title": "GitHub Nova, Top Teacher Award",
       "date": "2022",
       "icon": "FaGithub",
-      "color": "green",
       "description": "Won top teacher award from GitHub.",
       "url": "https://github.com/eddiejaoude"
-    }
-  ],
-  "events": [
-    {
-      "isVirtual": true,
-      "color": "red",
-      "name": "Open Source GitHub reviews",
-      "description": "In this livestream I will be going reviewing your **Open Source projects** and profiles! I will be joined by **Amanda**, a Developer Advocate.",
-      "date": {
-        "start": "2022-12-09T16:00:00.000+00:00",
-        "end": "2022-12-09T17:00:00.000+00:00"
-      },
-      "url": "https://www.youtube.com/watch?v=iqIFD02OkVE"
-    },
-    {
-      "isVirtual": true,
-      "isInPerson": true,
-      "color": "green",
-      "name": "Google DevFest London",
-      "description": "This year, your DevFest will feature leading experts on Google technologies in areas like Web, Firebase, Flutter, Machine Learning, Artificial Intelligence, Cloud and so much more including a mini-careers fair!",
-      "date": {
-        "start": "2022-12-10T09:00:00.000+00:00",
-        "end": "2022-12-10T17:30:00.000+00:00"
-      },
-      "url": "https://www.eventbrite.com/e/gdg-london-devfest-2022-tickets-471199328877"
-    },
-    {
-      "isVirtual": true,
-      "color": "blue",
-      "name": "Eddie Jaoude GitHub Sponsors call",
-      "description": "Regular catch up call with my GitHub Sponsors. We can chat about whatever **you** like. Let's GEEK out!",
-      "date": {
-        "start": "2022-12-11T14:00:00.000+00:00",
-        "end": "2022-12-11T15:00:00.000+00:00"
-      },
-      "url": "https://github.com/sponsors/eddiejaoude"
     }
   ]
 }
 ```
 
+Click on the relevant section to learn more about <Link href="/docs/how-to-guides/events-json">Events</Link> and <Link href="/docs/how-to-guides/testimonials-json">Testimonials</Link>.
+
 export default ({ children }) => (
-  <DocsLayout title="LinkFree Full Example documentation">
+  <DocsLayout
+    title="BioDrop Full Example documentation"
+    section="Extra"
+    name="Full Profile Example"
+  >
     {children}
   </DocsLayout>
 );

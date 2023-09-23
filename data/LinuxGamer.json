@@ -1,9 +1,7 @@
 {
-  "name": "LinuxGamer (aka CJ)",
-  "type": "personal",
-  "bio": "Open Source Enthusiast! Tech, Gaming, Art YouTuber and Streamer.",
-  "displayStatsPublic": true,
-  "avatar": "https://github.com/LinuxGamer.png",
+  "name": "CJ (LinuxGamer)",
+  "bio": "**Open Source** Enthusiast! Dyslexic Artist, Developer and Content Creator.",
+  "tags": ["Open Source", "Youtuber", "EddieHub", "GitHub", "Artist", "Writer"],
   "links": [
     {
       "name": "Follow me on GitHub",
@@ -12,7 +10,7 @@
     },
     {
       "name": "Subscribe to my YouTube",
-      "url": "https://www.youtube.com/channel/UCbBtLFxKBpcwt85EoP0kXRg",
+      "url": "https://www.youtube.com/@the_linuxgamer",
       "icon": "FaYoutube"
     },
     {
@@ -21,8 +19,8 @@
       "icon": "FaTwitter"
     },
     {
-      "name": "Follow my Mastodon",
-      "url": "https://fosstodon.org/@linuxgamer",
+      "name": "Follow my main Fediverse account",
+      "url": "https://linuxrocks.online/@LinuxGamer",
       "icon": "FaMastodon"
     },
     {
@@ -44,7 +42,7 @@
       "title": "First Appeared On Twitter",
       "date": "June 2022",
       "icon": "FaTwitter",
-      "color": "red",
+      "color": "blue",
       "description": "First appeared on Twitter.",
       "url": "https://twitter.com/the_linuxgamer"
     },
@@ -62,6 +60,20 @@
       "icon": "tree",
       "color": "green",
       "description": "Pledged to become Greener and more sustainable within development and content creation."
+    },
+    {
+      "title": "Started Working With JavaScript!",
+      "date": "6 January 2023",
+      "icon": "SiJavascript",
+      "color": "yellow",
+      "description": "I started learning JavaScript by working on some JavaScript projects, like Linkfree and Collaborafolio"
+    },
+    {
+      "title": "Started Writing My First Novel",
+      "date": "27 June 2023",
+      "icon": "FaBook",
+      "color": "blue",
+      "description": "I started work on writing my first novel, I have always wanted to write a book, and finally I plucked up the courage to start."
     }
   ]
 }

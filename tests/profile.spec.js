@@ -1,49 +1,44 @@
 // @ts-check
 import { test, expect } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
+
+import connectMongo from "@config/mongo";
+import { Profile } from "@models/index";
 
 test("Profile has title", async ({ page }) => {
   const username = "_test-profile-user-1";
   await page.goto(`/${username}`);
-  await expect(page).toHaveTitle(username.toUpperCase());
+  await expect(page).toHaveTitle("Test User Name 1");
 });
 
 // Test to make sure profile name is displayed on page
 test("Name appears on the page", async ({ page }) => {
   const username = "_test-profile-user-2";
   await page.goto(`/${username}`);
-  await expect(page.locator("h1")).toHaveText(username.toUpperCase());
+  await expect(page.locator("h1")).toHaveText("Test User Name 2");
 });
 
-// Test to see if going to a profile 3X increases views by 3
 test("Profile views increase", async ({ page }) => {
+  await connectMongo();
   await page.goto("/_test-profile-user-3");
-  const startingViews = await page.innerText("#profile-views");
-  await page.goto("/_test-profile-user-3");
-  await page.goto("/_test-profile-user-3");
-  await page.goto("/_test-profile-user-3");
-
-  const endingViews = await page.innerText("#profile-views");
-  expect(parseInt(startingViews)).toEqual(parseInt(endingViews) - 3);
-});
-
-test("Link clicks increase", async ({ page }) => {
-  await page.goto("/_test-profile-user-4");
-
-  const link = page.locator("text=/Link 1\\s*/i");
-  const startingClicks = (await link.innerText()).match(/(\d+)/g);
-
-  await link.click();
-  await link.click();
-  await link.click();
-
-  await page.waitForResponse(
-    (resp) => resp.url().includes("/api/statistics") && resp.status() === 201
+  const startingViews = await Profile.findOne(
+    { username: "_test-profile-user-3" },
+    "views"
   );
 
-  const endingClicks = (await link.innerText()).match(/(\d+)/g);
+  await page.goto("/_test-profile-user-3");
+  await page.goto("/_test-profile-user-3");
+  await page.goto("/_test-profile-user-3");
 
-  // 4. get the current link views and see if increased by 3
-  expect(parseInt(startingClicks[1])).toEqual(parseInt(endingClicks[1]) - 3);
+  const endingViews = await Profile.findOne(
+    { username: "_test-profile-user-3" },
+    "views"
+  );
+  expect(startingViews.views).toEqual(endingViews.views - 3);
+});
+
+test.fixme("Link clicks increase", async () => {
+  // will need DB integration
 });
 
 test("Profile not found redirects to search page with error message", async ({
@@ -57,16 +52,64 @@ test("Profile not found redirects to search page with error message", async ({
   );
 });
 
-test.fixme("Link navigates", async ({ page }) => {
-  // 1. nagivate to profile
+test.fixme("Link navigates", async () => {
+  // 1. navigate to profile
   // 2. get a link and href
   // 3. click the link
   // 4. get the current url and should match href
 });
 
-test.fixme("redirect to search when tag clicked", async ({ page }) => {
-  // 1. redirect to profile
-  // 2. get a link and href
-  // 3. click the link
-  // 4. get the current url and should match href
+test("redirect to search when tag clicked", async ({ page }) => {
+  await page.goto("/_test-profile-user-6");
+  await page.getByRole("button", { name: "Open Source" }).first().click();
+  await page.waitForLoadState("networkidle");
+  await expect(page).toHaveURL("search?keyword=open%20source");
+});
+
+test.describe("accessibility tests (light)", () => {
+  test.use({ colorScheme: "light" });
+
+  test("should pass axe wcag accessibility tests (_test-profile-user-6) (light)", async ({
+    page,
+  }) => {
+    await page.goto("/_test-profile-user-6");
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .analyze();
+    expect(accessibilityScanResults.violations).toEqual([]);
+  });
+
+  test("should pass axe wcag accessibility tests (_test-wcag-user) (light)", async ({
+    page,
+  }) => {
+    await page.goto("/_test-wcag-user");
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .analyze();
+    expect(accessibilityScanResults.violations).toEqual([]);
+  });
+});
+
+test.describe("accessibility tests (dark)", () => {
+  test.use({ colorScheme: "dark" });
+
+  test("should pass axe wcag accessibility tests (_test-profile-user-6) (dark)", async ({
+    page,
+  }) => {
+    await page.goto("/_test-profile-user-6");
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .analyze();
+    expect(accessibilityScanResults.violations).toEqual([]);
+  });
+
+  test("should pass axe wcag accessibility tests (_test-wcag-user) (dark)", async ({
+    page,
+  }) => {
+    await page.goto("/_test-wcag-user");
+    const accessibilityScanResults = await new AxeBuilder({ page })
+      .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+      .analyze();
+    expect(accessibilityScanResults.violations).toEqual([]);
+  });
 });

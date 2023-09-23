@@ -1,10 +1,6 @@
 {
   "name": "Shreeyash Garde",
-  "displayStatsPublic": true,
-  "type": "personal",
   "bio": "Student at Pcet's NMIET , currently learning frontend web developement and data structures and algorithm in Java",
-  "avatar": "https://github.com/ShreeyashGarde.png",
-
   "links": [
     {
       "name": "Follow me on Twitter",
@@ -18,7 +14,7 @@
     },
     {
       "name": "Connect with me on Github",
-      "url": "https://github.com/settings/profile",
+      "url": "https://github.com/ShreeyashGarde",
       "icon": "FaGithub"
     }
   ]

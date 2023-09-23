@@ -1,9 +1,6 @@
 {
   "name": "Oloja Muyiwa",
-  "displayStatsPublic": true,
-  "type": "personal",
   "bio": "Software Developer and Linux Enthusiats",
-  "avatar": "https://github.com/OlojaMuyiwa.png",
   "tags": [
     "Javascript",
     "React",
@@ -15,11 +12,26 @@
     "C"
   ],
   "socials": [
-    { "icon": "FaTwitter", "url": "https://twitter.com/iRedeploy__" },
-    { "icon": "FaGithub", "url": "https://github.com/OlojaMuyiwa" },
-    { "icon": "FaLinkedln", "url": "https://t.co/oXKU6HHuuu" },
-    { "icon": "FaFacebook", "url": "https://t.co/FLbTvMuQ5i" },
-    { "icon": "FaInstagram", "url": "https://t.co/FLbTvMuQ5i" }
+    {
+      "icon": "FaTwitter",
+      "url": "https://twitter.com/iRedeploy__"
+    },
+    {
+      "icon": "FaGithub",
+      "url": "https://github.com/OlojaMuyiwa"
+    },
+    {
+      "icon": "FaLinkedln",
+      "url": "https://t.co/oXKU6HHuuu"
+    },
+    {
+      "icon": "FaFacebook",
+      "url": "https://t.co/FLbTvMuQ5i"
+    },
+    {
+      "icon": "FaInstagram",
+      "url": "https://t.co/FLbTvMuQ5i"
+    }
   ],
   "links": [
     {
@@ -31,6 +43,16 @@
       "name": "Follow me on Twitter",
       "url": "https://twitter.com/iRedeploy__",
       "icon": "FaTwitter"
+    },
+    {
+      "name": "Follow me on Instagram",
+      "url": "https://www.instagram.com/redeployzaheer/",
+      "icon": "FaInstagram"
+    },
+    {
+      "name": "Let's Connect on Linkedin",
+      "url": "https://www.linkedin.com/in/oloja-muyiwa-b6b89a24b/",
+      "icon": "FaLinkedln"
     }
   ],
   "milestones": [
